@@ -1,8 +1,11 @@
 { pkgs, ... }:
 
 {
-  CustomOptions = {
+  customOptions = {
     user.homeDirectory = "/Users/zito";
+    modules = {
+      fonts.enable = true;
+    };
   };
 
   imports = [

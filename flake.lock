@@ -113,7 +113,24 @@
         "nixpkgs": "nixpkgs",
         "nixpkgs-darwin": "nixpkgs-darwin",
         "nixpkgs-darwin-unstable": "nixpkgs-darwin-unstable",
-        "nixpkgs-unstable": "nixpkgs-unstable"
+        "nixpkgs-unstable": "nixpkgs-unstable",
+        "secrets": "secrets"
+      }
+    },
+    "secrets": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1745271329,
+        "narHash": "sha256-ahDhaNehkHx6vFOCjCSr5DJQWW0g2gT25jDC4WP2w50=",
+        "ref": "refs/heads/main",
+        "rev": "bf036012fc70db999fa67d2a44689430c16147e8",
+        "revCount": 1,
+        "type": "git",
+        "url": "ssh://git@github.com/54zito/nix-config-secrets.git"
+      },
+      "original": {
+        "type": "git",
+        "url": "ssh://git@github.com/54zito/nix-config-secrets.git"
       }
     }
   },

@@ -15,6 +15,10 @@
       url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs-darwin";
     };
+    secrets = {
+      url = "git+ssh://git@github.com/54zito/nix-config-secrets.git";
+      flake = false;
+    };
   };
 
   outputs = { ... }@inputs:
@@ -24,6 +28,7 @@
       modules = [
         ./machines/darwin
         ./machines/darwin/arya
+        ./modules
         ./users/zito
         inputs.home-manager-darwin.darwinModules.home-manager
       ];
