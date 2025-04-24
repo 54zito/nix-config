@@ -76,11 +76,11 @@
     },
     "nixpkgs-darwin-unstable": {
       "locked": {
-        "lastModified": 1744868846,
-        "narHash": "sha256-5RJTdUHDmj12Qsv7XOhuospjAjATNiTMElplWnJE9Hs=",
+        "lastModified": 1745377448,
+        "narHash": "sha256-jhZDfXVKdD7TSEGgzFJQvEEZ2K65UMiqW5YJ2aIqxMA=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "ebe4301cbd8f81c4f8d3244b3632338bbeb6d49c",
+        "rev": "507b63021ada5fee621b6ca371c4fca9ca46f52c",
         "type": "github"
       },
       "original": {
@@ -120,11 +120,11 @@
     "secrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1745271329,
-        "narHash": "sha256-ahDhaNehkHx6vFOCjCSr5DJQWW0g2gT25jDC4WP2w50=",
+        "lastModified": 1745478831,
+        "narHash": "sha256-/0j5Ei2r6xpEhK0eCn0O2Uuwc9gw7aotY4ny6LipxkE=",
         "ref": "refs/heads/main",
-        "rev": "bf036012fc70db999fa67d2a44689430c16147e8",
-        "revCount": 1,
+        "rev": "65086d0cbb261b11f01eded831c9f551eb737fb8",
+        "revCount": 2,
         "type": "git",
         "url": "ssh://git@github.com/54zito/nix-config-secrets.git"
       },
