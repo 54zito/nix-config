@@ -92,11 +92,11 @@
     },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 1745234285,
-        "narHash": "sha256-GfpyMzxwkfgRVN0cTGQSkTC0OHhEkv3Jf6Tcjm//qZ0=",
+        "lastModified": 1745391562,
+        "narHash": "sha256-sPwcCYuiEopaafePqlG826tBhctuJsLx/mhKKM5Fmjo=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "c11863f1e964833214b767f4a369c6e6a7aba141",
+        "rev": "8a2f738d9d1f1d986b5a4cd2fd2061a7127237d7",
         "type": "github"
       },
       "original": {
@@ -120,11 +120,11 @@
     "secrets": {
       "flake": false,
       "locked": {
-        "lastModified": 1745478831,
+        "lastModified": 1745501541,
         "narHash": "sha256-/0j5Ei2r6xpEhK0eCn0O2Uuwc9gw7aotY4ny6LipxkE=",
         "ref": "refs/heads/main",
-        "rev": "65086d0cbb261b11f01eded831c9f551eb737fb8",
-        "revCount": 2,
+        "rev": "acca6a90feffef8396500132c708fc8d89023248",
+        "revCount": 5,
         "type": "git",
         "url": "ssh://git@github.com/54zito/nix-config-secrets.git"
       },

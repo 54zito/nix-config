@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ pkgs, config, inputs, ... }:
 
 {
   system.defaults = {
@@ -77,4 +77,8 @@
       ${pkgs.mkalias}/bin/mkalias "$src" "/Applications/Nix Apps/$app_name"
       done
     '';
+
+  system.activationScripts.postActivation.text = ''
+    osascript -e 'tell application "Finder" to set desktop picture to POSIX file "${inputs.secrets}/wallpapers/kc_royal.jpg"'
+  '';
 }
