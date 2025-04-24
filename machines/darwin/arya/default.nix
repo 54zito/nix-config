@@ -3,6 +3,7 @@
 {
   customOptions = {
     user.homeDirectory = "/Users/zito";
+    homeManager.enable = true;
     modules = {
       fonts.enable = true;
     };
@@ -15,10 +16,8 @@
   environment.systemPackages = with pkgs; [
     htop
     wget
-    tmux
-    neovim
     tree
-    zoxide
+    
     google-chrome
     discord
   ];

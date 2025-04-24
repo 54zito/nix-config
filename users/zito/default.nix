@@ -1,4 +1,4 @@
-{ pkgs, inputs, lib, config, ... }:
+{ pkgs, lib, config, ... }:
 
 {
   options = {
@@ -12,6 +12,7 @@
     users.users.zito = {
       name = "zito";
       home = config.customOptions.user.homeDirectory;
+      shell = pkgs.zsh;
     };
   };
   imports = [ ./home-manager.nix ];

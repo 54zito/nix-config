@@ -1,15 +1,29 @@
-{ pkgs, inputs, config, ... }:
+{ pkgs, lib, config, ... }:
 
+let
+  home-managerConfig = {
+    users.zito = {
+      home.username = "zito";
+      home.homeDirectory = config.customOptions.user.homeDirectory;
+      home.stateVersion = "24.11";
+      
+      imports = [
+        ./dots/git.nix
+        ./dots/zsh.nix
+        ./dots/tmux.nix
+      ];
+    };
+  };
+in
 {
-  home-manager.useGlobalPkgs = true;
-  home-manager.useUserPackages = false;
-  home-manager.users.zito = {
-    imports = [
-      ./dots/git.nix
-      ./dots/zsh.nix
-    ];
-    home.username = "zito";
-    home.homeDirectory = config.customOptions.user.homeDirectory;
-    home.stateVersion = "24.11";
+  options = {
+    customOptions.homeManager.enable = lib.mkOption {
+      type = lib.types.bool;
+      default = false;
+      description = "Enables Home Manager";
+    };
+  };
+  config =  lib.mkIf config.customOptions.homeManager.enable {
+    home-manager = home-managerConfig;
   };
 }
