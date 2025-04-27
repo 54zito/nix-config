@@ -3,9 +3,11 @@
 {
   imports = [
     ./fonts
+    ./home-manager
   ];
 
-  customOptions.modules = {
+  zitoConfig.modules = {
     fonts.enable = lib.mkDefault false;
+    home-manager.enable = lib.mkDefault false;
   };
 }

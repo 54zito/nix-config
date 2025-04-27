@@ -7,6 +7,7 @@
     autosuggestion.enable = true;
     enableCompletion = true;
     initExtra = ''
+      export EDITOR=nvim
       ###################################### ZSH COMPLETION ######################################
       zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
       zstyle ':completion:*' menu yes=long select
@@ -14,9 +15,6 @@
       ##################################### NIX REBUILD FUNCS #####################################
       drs() {
         darwin-rebuild switch --flake ~/nix-config#"$1"
-      }
-      nrs() {
-        nixos-rebuild switch --flake ~/nix-config#"$1"
       }
 
       ############################################ FZF ############################################
@@ -36,7 +34,7 @@
       _fzf_compgen_dir() {
         fd --type=d --hidden --exclude .git . "$1"
       }
-      show_file_or_dir_preview="if [ -d {} ]; then eza --tree --color=always {} | head -200; else bat -n --color=always --line-range :500 {}; fi"
+      show_file_or_dir_preview="if [ -d {} ]; then eza --tree --color=always {} | head -200; else bat -n --color=always --line-range :50 {}; fi"
       export FZF_CTRL_T_OPTS="--preview '$show_file_or_dir_preview'"
       export FZF_ALT_C_OPTS="--preview 'eza --tree --color=always {} | head -200'"
       _fzf_comprun() {

@@ -12,7 +12,7 @@
       magnification = false;
       persistent-apps = [
         "/System/Applications/Launchpad.app"
-        "/System/Applications/Utilities/Terminal.app"
+        "${pkgs.alacritty}/Applications/Alacritty.app"
         "${pkgs.google-chrome}/Applications/Google Chrome.app"
         "/System/Applications/Mail.app"
         "/System/Applications/Calendar.app"

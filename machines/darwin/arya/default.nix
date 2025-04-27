@@ -1,11 +1,11 @@
 { pkgs, ... }:
 
 {
-  customOptions = {
-    user.homeDirectory = "/Users/zito";
-    homeManager.enable = true;
+  zitoConfig = {
+    homeDirectory = "/Users/zito";
     modules = {
       fonts.enable = true;
+      home-manager.enable = true;
     };
   };
 
@@ -17,7 +17,9 @@
     htop
     wget
     tree
+    ripgrep
     
+    alacritty
     google-chrome
     discord
   ];

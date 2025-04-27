@@ -13,9 +13,9 @@ let
 in
 {
   options = {
-    customOptions.modules.fonts.enable = lib.mkEnableOption "Enables custom fonts";
+    zitoConfig.modules.fonts.enable = lib.mkEnableOption "Enables custom fonts";
   };
-  config = lib.mkIf config.customOptions.modules.fonts.enable {
+  config = lib.mkIf config.zitoConfig.modules.fonts.enable {
     fonts.packages = [ customFonts ];
   };
 }
