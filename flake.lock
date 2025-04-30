@@ -111,11 +111,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1745487689,
-        "narHash": "sha256-FQoi3R0NjQeBAsEOo49b5tbDPcJSMWc3QhhaIi9eddw=",
+        "lastModified": 1745921652,
+        "narHash": "sha256-hEAvEN+y/OQ7wA7+u3bFJwXSe8yoSf2QaOMH3hyTJTQ=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "5630cf13cceac06cefe9fc607e8dfa8fb342dde3",
+        "rev": "b000159bba69b0106a42f65e52dbf27f77aca9d3",
         "type": "github"
       },
       "original": {
@@ -143,11 +143,11 @@
     },
     "nixpkgs-darwin-unstable": {
       "locked": {
-        "lastModified": 1745377448,
-        "narHash": "sha256-jhZDfXVKdD7TSEGgzFJQvEEZ2K65UMiqW5YJ2aIqxMA=",
+        "lastModified": 1745934659,
+        "narHash": "sha256-odZyAgjybOV1ha/lEoVL5HVOJw1YqFDfem9u3t+VB2o=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "507b63021ada5fee621b6ca371c4fca9ca46f52c",
+        "rev": "fbc071e5c11e23fba50037de37268e3d8a1858eb",
         "type": "github"
       },
       "original": {
@@ -159,11 +159,11 @@
     },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 1745526057,
-        "narHash": "sha256-ITSpPDwvLBZBnPRS2bUcHY3gZSwis/uTe255QgMtTLA=",
+        "lastModified": 1745930157,
+        "narHash": "sha256-y3h3NLnzRSiUkYpnfvnS669zWZLoqqI6NprtLQ+5dck=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "f771eb401a46846c1aebd20552521b233dd7e18b",
+        "rev": "46e634be05ce9dc6d4db8e664515ba10b78151ae",
         "type": "github"
       },
       "original": {
@@ -182,11 +182,11 @@
         "nuschtosSearch": "nuschtosSearch"
       },
       "locked": {
-        "lastModified": 1745746098,
-        "narHash": "sha256-3f6vvpa2/8XmzTaJjhUYtedlNMHIjwXJ6C2oWXBTubk=",
+        "lastModified": 1746023249,
+        "narHash": "sha256-b3Tx2ZYKwIAhuP+3o9jc0dcAoO9CtW4oSq4EqbxqogA=",
         "owner": "nix-community",
         "repo": "nixvim",
-        "rev": "89c94d9ea72d7080838981295f9b526eb3a960de",
+        "rev": "276abde28827aa339343fa08b71505fa60a9f386",
         "type": "github"
       },
       "original": {
@@ -227,23 +227,7 @@
         "nixpkgs-darwin-unstable": "nixpkgs-darwin-unstable",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "nixvim-darwin": "nixvim-darwin",
-        "secrets": "secrets"
-      }
-    },
-    "secrets": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1745501541,
-        "narHash": "sha256-/0j5Ei2r6xpEhK0eCn0O2Uuwc9gw7aotY4ny6LipxkE=",
-        "ref": "refs/heads/main",
-        "rev": "acca6a90feffef8396500132c708fc8d89023248",
-        "revCount": 5,
-        "type": "git",
-        "url": "ssh://git@github.com/54zito/nix-config-secrets.git"
-      },
-      "original": {
-        "type": "git",
-        "url": "ssh://git@github.com/54zito/nix-config-secrets.git"
+        "z-env": "z-env"
       }
     },
     "systems": {
@@ -259,6 +243,22 @@
         "owner": "nix-systems",
         "repo": "default",
         "type": "github"
+      }
+    },
+    "z-env": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1746024422,
+        "narHash": "sha256-/0j5Ei2r6xpEhK0eCn0O2Uuwc9gw7aotY4ny6LipxkE=",
+        "ref": "refs/heads/main",
+        "rev": "54fab1a05d80027ad92d15ec4ff16917f7fa5a77",
+        "revCount": 1,
+        "type": "git",
+        "url": "ssh://git@github.com/54zito/z-env.git"
+      },
+      "original": {
+        "type": "git",
+        "url": "ssh://git@github.com/54zito/z-env.git"
       }
     }
   },

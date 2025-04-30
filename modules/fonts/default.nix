@@ -3,7 +3,7 @@
 let
   customFonts = pkgs.stdenv.mkDerivation {
     name = "Custom fonts";
-    src = "${inputs.secrets}/fonts";
+    src = "${inputs.z-env}/fonts";
 
     installPhase = ''
       mkdir -p $out/share/fonts

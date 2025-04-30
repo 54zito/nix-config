@@ -22,6 +22,7 @@
     alacritty
     google-chrome
     discord
+    vscode
   ];
 
   homebrew = {

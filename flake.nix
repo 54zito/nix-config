@@ -19,8 +19,8 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs-darwin";
     };
-    secrets = {
-      url = "git+ssh://git@github.com/54zito/nix-config-secrets.git";
+    z-env = {
+      url = "git+ssh://git@github.com/54zito/z-env.git";
       flake = false;
     };
   };
