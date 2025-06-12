@@ -1,0 +1,105 @@
+{
+  "nodes": {
+    "home-manager-darwin": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs-darwin"
+        ]
+      },
+      "locked": {
+        "lastModified": 1747688870,
+        "narHash": "sha256-ypL9WAZfmJr5V70jEVzqGjjQzF0uCkz+AFQF7n9NmNc=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "d5f1f641b289553927b3801580598d200a501863",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "ref": "release-24.11",
+        "repo": "home-manager",
+        "type": "github"
+      }
+    },
+    "nix-darwin": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs-darwin"
+        ]
+      },
+      "locked": {
+        "lastModified": 1743127615,
+        "narHash": "sha256-+sMGqywrSr50BGMLMeY789mSrzjkoxZiu61eWjYS/8o=",
+        "owner": "nix-darwin",
+        "repo": "nix-darwin",
+        "rev": "fc843893cecc1838a59713ee3e50e9e7edc6207c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-darwin",
+        "ref": "nix-darwin-24.11",
+        "repo": "nix-darwin",
+        "type": "github"
+      }
+    },
+    "nixpkgs-darwin": {
+      "locked": {
+        "lastModified": 1749488106,
+        "narHash": "sha256-b9GIWdF/8jKpCC5JIMgDLZgwe8cEbty2fyTyo1eDFfI=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "8fe3e32e7f210522377c3bcff80931a3284ace6a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixpkgs-24.11-darwin",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs-darwin-unstable": {
+      "locked": {
+        "lastModified": 1749619289,
+        "narHash": "sha256-qX6gXVjaCXXbcn6A9eSLUf8Fm07MgPGe5ir3++y2O1Q=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "f72be405a10668b8b00937b452f2145244103ebc",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixpkgs-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "home-manager-darwin": "home-manager-darwin",
+        "nix-darwin": "nix-darwin",
+        "nixpkgs-darwin": "nixpkgs-darwin",
+        "nixpkgs-darwin-unstable": "nixpkgs-darwin-unstable",
+        "z-env": "z-env"
+      }
+    },
+    "z-env": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1746024422,
+        "narHash": "sha256-/0j5Ei2r6xpEhK0eCn0O2Uuwc9gw7aotY4ny6LipxkE=",
+        "ref": "refs/heads/main",
+        "rev": "54fab1a05d80027ad92d15ec4ff16917f7fa5a77",
+        "revCount": 1,
+        "type": "git",
+        "url": "ssh://git@github.com/54zito/z-env.git"
+      },
+      "original": {
+        "type": "git",
+        "url": "ssh://git@github.com/54zito/z-env.git"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
