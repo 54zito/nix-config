@@ -4,9 +4,9 @@ let
   zito-dots = ../../users/zito/dots;
   home-managerConfig = {
     users.zito = {
-      home.username = "zito";
+      home.username = config.zitoConfig.userName;
       home.homeDirectory = config.zitoConfig.homeDirectory;
-      home.stateVersion = "24.11";
+      home.stateVersion = "25.05";
       imports = [
         "${zito-dots}/git.nix"
         "${zito-dots}/zsh.nix"

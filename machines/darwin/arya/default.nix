@@ -4,20 +4,20 @@
   zitoConfig = {
     homeDirectory = "/Users/zito";
     modules = {
-      fonts.enable = true;
       home-manager.enable = true;
+      fonts.enable = true;
     };
   };
 
   imports = [
     ./system.nix
+    ./scripts.nix
   ];
 
   environment.systemPackages = with pkgs; [
     htop
     wget
     tree
-    
     google-chrome
     discord
     vscode

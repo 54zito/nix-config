@@ -2,6 +2,11 @@
 
 {
   options = {
+    zitoConfig.userName = lib.mkOption {
+      type = lib.types.str;
+      default = "zito";
+      description = "User name.";
+    };
     zitoConfig.homeDirectory = lib.mkOption {
       type = lib.types.str;
       default = "/home/zito";
@@ -10,7 +15,7 @@
   };
   config = {
     users.users.zito = {
-      name = "zito";
+      name = config.zitoConfig.userName;
       home = config.zitoConfig.homeDirectory;
     };
   };
