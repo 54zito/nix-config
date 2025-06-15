@@ -58,28 +58,11 @@
         "type": "github"
       }
     },
-    "nixpkgs-darwin-unstable": {
-      "locked": {
-        "lastModified": 1749871736,
-        "narHash": "sha256-K9yBph93OLTNw02Q6e9CYFGrUhvEXnh45vrZqIRWfvQ=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "6afe187897bef7933475e6af374c893f4c84a293",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixpkgs-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "home-manager-darwin": "home-manager-darwin",
         "nix-darwin": "nix-darwin",
         "nixpkgs-darwin": "nixpkgs-darwin",
-        "nixpkgs-darwin-unstable": "nixpkgs-darwin-unstable",
         "z-env": "z-env"
       }
     },
