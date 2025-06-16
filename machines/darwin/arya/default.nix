@@ -29,6 +29,9 @@
     brews = [ "mas" ];
     casks = [ "raspberry-pi-imager" ];
     masApps = {
+      "Numbers" = 409203825;
+      "Pages" = 409201541;
+      "Keynote" = 409183694;
       "Slack" = 803453959;
       "WhatsApp" = 310633997;
       "Wireguard" = 1451685025;
