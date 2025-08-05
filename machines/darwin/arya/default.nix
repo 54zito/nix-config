@@ -21,7 +21,9 @@
     google-chrome
     discord
     vscode
-    nasm
+    go
+    golangci-lint
+    go-tools
   ];
 
   homebrew = {
