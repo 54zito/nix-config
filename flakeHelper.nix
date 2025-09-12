@@ -8,7 +8,7 @@
           services.openssh.enable = true;
           systemd.services.sshd.wantedBy = pkgs.lib.mkForce [ "multi-user.target" ];
           users.users.root.openssh.authorizedKeys.keys = sshKeys;
-          environment.systemPackages = with pkgs; [ disko pciutils htop neofetch ];
+          environment.systemPackages = with pkgs; [ exfatprogs pciutils htop neofetch ];
         })
       ];
     };
