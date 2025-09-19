@@ -12,14 +12,14 @@
       packages.x86_64-linux.installer = installer.config.system.build.isoImage;
     };
   # NIXOS
-  mkNixOS = hostName: nixpkgsVersion: userName: {
+  mkNixOS = hostName: nixpkgsVersion: userName: extraModules: {
     nixosConfigurations.${hostName} = nixpkgsVersion.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         ./machines/nixos
         ./machines/nixos/${hostName}
         ./users/${userName}
-      ];
+      ] ++extraModules;
     };
   };
 }

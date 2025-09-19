@@ -11,5 +11,5 @@
     inherit (helper) mkInstaller mkNixOS;
   in
     mkInstaller inputs.nixpkgs-os
-    // mkNixOS "myrcella" inputs.nixpkgs-os "zito";
+    // mkNixOS "myrcella" inputs.nixpkgs-os "zito" [ ./modules/homelab ];
 }

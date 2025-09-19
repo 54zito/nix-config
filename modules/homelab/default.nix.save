@@ -1,0 +1,49 @@
+{ lib, config, ... }:
+
+let
+  homeNetwork = ''
+  #!/bin/sh
+  set -eu
+
+  NAME="home-network"
+  SUBNET="192.168.1.0/24"
+  GATEWAY="192.168.1.1"
+  DRIVER="ipvlan"
+  PARENT="enp3s0f0"
+
+  if ! podman network exists $NAME; then
+    podman network create \
+    --driver=$DRIVER \
+    --subnet=$SUBNET \
+    --gateway=$GATEWAY \
+    -o parent=$PARENT \
+    $NAME
+  fi
+  '';
+in
+{
+  options = {
+    ZConfig.homelab.enable = lib.mkOption {
+      description = "Enables the HomeLab module.";
+      type = lib.types.bool;
+      default = false;
+    };
+  };
+  config = lib.mkIf config.ZConfig.homelab.enable {
+    virtualisation = {
+      containers.enable = true;
+      podman = {
+        enable = true;
+        dockerCompat = true;
+        defaultNetwork.settings.dns_enabled = true;
+      };
+      oci-containers = {
+        backend = "podman";
+        containers = {
+          Traefik = import ./traefik;
+        };
+      };
+    };
+    system.activationScripts.createPodmanNetwork.text = homeNetwork;
+  };
+}
