@@ -14,23 +14,24 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/0abf987f-150b-4e8f-9603-ec06f75b1bb8";
+    { device = "/dev/disk/by-id/nvme-CT500P3SSD8_241247C684DC-part3";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/1588-5794";
+    { device = "/dev/disk/by-id/nvme-CT500P3SSD8_241247C684DC-part1";
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
     };
 
-  fileSystems."/srv/share" =
-    { device = "/dev/disk/by-uuid/7ADE-915D";
+  fileSystems."/persistant" =
+    { device = "/dev/disk/by-id/ata-SPCC_Solid_State_Disk_MQ13A77906794-part1";
       fsType = "exfat";
+      options = [ "umask=0000" ];
     };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/4f194220-f181-41e0-a853-9f7dffcbc0a1"; }
+    [ { device = "/dev/disk/by-id/nvme-CT500P3SSD8_241247C684DC-part2"; }
     ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking

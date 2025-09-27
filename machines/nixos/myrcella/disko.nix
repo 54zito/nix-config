@@ -50,8 +50,8 @@
               content = {
                 type = "filesystem";
                 format = "exfat";
-                mountpoint = "/srv/share";
-                mountOptions = [ "umask=0000" "iocharset=utf8" ];
+                mountpoint = "/persistant";
+                mountOptions = [ "iocharset=utf8" ];
               };
             };
           };
