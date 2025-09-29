@@ -18,6 +18,5 @@ Install the desired config.
 ```
 nixos-install \
 --root /mnt \
---no-root-passwd \
 --flake github:54zito/nix-config#$HOSTNAME_TO_INSTALL
 ```
