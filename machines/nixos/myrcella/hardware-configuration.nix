@@ -24,9 +24,10 @@
       options = [ "fmask=0077" "dmask=0077" ];
     };
 
-  fileSystems."/persistant" =
+  fileSystems."/srv/share" =
     { device = "/dev/disk/by-id/ata-SPCC_Solid_State_Disk_MQ13A77906794-part1";
       fsType = "exfat";
+      options = [ "umask=0000" ];
     };
 
   swapDevices =
