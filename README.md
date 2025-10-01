@@ -12,7 +12,7 @@ Disk partitioning will be done using 'disko'.
 ```
 curl https://raw.githubusercontent.com/54zito/nix-config/refs/heads/main/machines/nixos/$HOSTNAME_TO_INSTALL/disko.nix -o /tmp/disko.nix
 
-disko -m destroy,format,mount /tmp/disko.nix
+disko -m destroy,format,mount --yes-wipe-all-disks /tmp/disko.nix
 ```
 Install the desired config.
 ```
