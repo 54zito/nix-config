@@ -27,7 +27,6 @@
   fileSystems."/persistant" =
     { device = "/dev/disk/by-id/ata-SPCC_Solid_State_Disk_MQ13A77906794-part1";
       fsType = "exfat";
-      options = [ "umask=0000" ];
     };
 
   swapDevices =
