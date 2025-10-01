@@ -4,6 +4,8 @@
   volumes = [ 
     "/run/podman/podman.sock:/var/run/docker.sock:ro"
     "/etc/localtime:/etc/localtime:ro"
+    "/persistant/services/traefik/keys:/api_keys:ro"
+    "/persistant/services/traefik/ssl:/ssl_certificates"
   ];
   networks = [ "proxy" ];
   ports = [ 
@@ -13,6 +15,10 @@
     "54443:54443"
     #"8080:8080" # api.insecure
   ];
+  environment = {
+    CLOUDFLARE_DNS_API_TOKEN_FILE = "/api_keys/dns.key";
+    CLOUDFLARE_ZONE_API_TOKEN_FILE = "/api_keyszone.key";
+  };
   cmd = [
     # Dashboard
     "--api.dashboard=true"
@@ -21,39 +27,39 @@
     # Provider
     "--providers.docker.exposedByDefault=false"
 
-    # HOME_WEB entrypoint
-    "--entrypoints.home_web.address=:80"
-    #"--entrypoints.home_web.http.redirections.entryPoint.to=home_websecure"
-    #"--entrypoints.home_web.http.redirections.entryPoint.scheme=https"
+    # HOME entrypoint
+    "--entrypoints.home.address=:80"
+    "--entrypoints.home.http.redirections.entryPoint.to=home_secure"
+    "--entrypoints.home.http.redirections.entryPoint.scheme=https"
 
-    # HOME_WEBSECURE entrypoint
-    "--entrypoints.home_websecure.address=:443"
-    #"--entrypoints.home_websecure.http.tls.certResolver=ee-f"
-    #"--entrypoints.home_websecure.http.tls.domains[0].main=home.ee-f.com"
-    #"--entrypoints.home_websecure.http.tls.domains[0].sans=*.home.ee-f.com"
+    # HOME_SECURE entrypoint
+    "--entrypoints.home_secure.address=:443"
+    "--entrypoints.home_secure.http.tls.certResolver=ee-f"
+    "--entrypoints.home_secure.http.tls.domains[0].main=home.ee-f.com"
+    "--entrypoints.home_secure.http.tls.domains[0].sans=*.home.ee-f.com"
 
     # WEB entrypoint
     "--entrypoints.web.address=:5480"
-    #"--entrypoints.web.http.redirections.entryPoint.to=websecure"
-    #"--entrypoints.web.http.redirections.entryPoint.scheme=https"
+    "--entrypoints.web.http.redirections.entryPoint.to=web_secure"
+    "--entrypoints.web.http.redirections.entryPoint.scheme=https"
 
-    # WEBSECURE entrypoint
-    "--entrypoints.websecure.address=:54443"
-    #"--entrypoints.websecure.http.tls.certResolver=ee-f"
-    #"--entrypoints.websecure.http.tls.domains[0].main=ee-f.com"
-    #"--entrypoints.websecure.http.tls.domains[0].sans=*.ee-f.com"
+    # WEB_SECURE entrypoint
+    "--entrypoints.web_secure.address=:54443"
+    "--entrypoints.web_secure.http.tls.certResolver=ee-f"
+    "--entrypoints.web_secure.http.tls.domains[0].main=ee-f.com"
+    "--entrypoints.web_secure.http.tls.domains[0].sans=*.ee-f.com"
 
     # Certificate resolver (ee-f.com)
-    #"--certificatesresolvers.ee-f.acme.email=zito@ee-f.com"
-    #"--certificatesresolvers.ee-f.acme.storage=/ssl_certificates/acme.json"
-    #"--certificatesresolvers.ee-f.acme.caServer=https://acme-v02.api.letsencrypt.org/directory"
-    #"--certificatesresolvers.ee-f.acme.dnschallenge.provider=cloudflare"
+    "--certificatesresolvers.ee-f.acme.email=zito@ee-f.com"
+    "--certificatesresolvers.ee-f.acme.storage=/ssl_certificates/acme.json"
+    "--certificatesresolvers.ee-f.acme.caServer=https://acme-v02.api.letsencrypt.org/directory"
+    "--certificatesresolvers.ee-f.acme.dnschallenge.provider=cloudflare"
   ];
   labels = {
     "traefik.enable" = "true";
-    "traefik.http.routers.traefik.entrypoints" = "home_web";
-    #"traefik.http.routers.traefik.tls.certresolver" = "ee-f";
-    "traefik.http.routers.traefik.rule" = "Host(`traefik.myrcella.local`)";
+    "traefik.http.routers.traefik.entrypoints" = "home_secure";
+    "traefik.http.routers.traefik.tls.certresolver" = "ee-f";
+    "traefik.http.routers.traefik.rule" = "Host(`traefik.home.ee-f.com`)";
     "traefik.http.routers.traefik.service" = "api@internal";
   };
 }

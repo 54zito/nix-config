@@ -9,8 +9,8 @@
     };
   };
   config = lib.mkIf config.ZConfig.homelab.enable {
-    systemd.services.podmanCreateHomeNetwork = import ./home_network.nix;     
-    systemd.services.podmanCreateProxyNetwork = import ./proxy_network.nix;     
+    systemd.services.podman-CreateHomeNetwork = import ./utils/home_network.nix;     
+    systemd.services.podman-CreateProxyNetwork = import ./utils/proxy_network.nix;     
     virtualisation = {
       containers.enable = true;
       podman = {
@@ -21,10 +21,9 @@
       oci-containers = {
         backend = "podman";
         containers = {
-          HomeAssistant = import ./homeassistant;
           AdGuardHome = import ./adguardhome;
           Traefik = import ./traefik;
-          Vaultwarden = import ./vaultwarden;
+          VaultWarden = import ./vaultwarden;
         };
       };
     };

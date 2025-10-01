@@ -1,14 +1,16 @@
 {
   autoStart = true;
-  dependsOn = [ "Traefik" ];
-  image = "docker.io/vaultwarden/server:1.34.3-alpine";
+  image = "docker.io/vaultwarden/server:1.34.0-alpine";
+  volumes = [
+    "/etc/localtime:/etc/localtime:ro"
+    "/persistant/services/vaultwarden:/data"
+  ];
   networks = [ "proxy" ];
-  volumes = [ "/etc/localtime:/etc/localtime:ro" "/srv/share/vaultwarden-data:/data" ];
   labels = {
     "traefik.enable" = "true";
-    "traefik.http.routers.vaultwarden.entrypoints" = "home_web";
-    #"traefik.http.routers.vaultwarden.tls.certresolver" = "ee-f";
-    "traefik.http.routers.vaultwarden.rule" = "Host(`vw.myrcella.local`)";
+    "traefik.http.routers.vaultwarden.entrypoints" = "web_secure";
+    "traefik.http.routers.vaultwarden.tls.certresolver" = "ee-f";
+    "traefik.http.routers.vaultwarden.rule" = "Host(`vw.ee-f.com`)";
     "traefik.http.services.vaultwarden.loadbalancer.server.port" = "80";
   };
 }
