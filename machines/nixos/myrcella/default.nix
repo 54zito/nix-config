@@ -8,13 +8,12 @@
 
   networking.hostName = "myrcella";
   networking.networkmanager.enable = true;
-  networking.enableIPv6 = false;
 
   time.timeZone = "Europe/Paris";
 
   i18n.defaultLocale = "en_US.UTF-8";
 
-  #ZConfig.homelab.enable = true;
+  ZConfig.homelab.enable = true;
   
   environment.systemPackages = with pkgs; [ nano tree htop neofetch git tmux ];
 

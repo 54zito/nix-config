@@ -23,7 +23,7 @@
         containers = {
           AdGuardHome = import ./adguardhome;
           Traefik = import ./traefik;
-          VaultWarden = import ./vaultwarden;
+          Vaultwarden = import ./vaultwarden;
         };
       };
     };
